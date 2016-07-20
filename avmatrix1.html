@@ -1,0 +1,227 @@
+<html lang="en">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <title>No angular Matrix</title>
+        
+
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="http://acessa.loc/connect/plugins/handlebars-v4.0.4.js"></script>
+    </head>
+    <body>
+        <script id="room-head" type="text/x-handlebars-template">
+            {{#each roomTypes}}
+                <tr data-package-id="0" data-room-type-id="4610" class="room_block"> <!--on-finish-render="ngRepeatFinished"-->
+                    <td class="room-block-properties"><!-- conflict line -->
+                        <div class="room-block-name clearfix"><!-- conflict line -->
+                            <div class="pull-left" style="margin-right: 10px;">
+                                <i class="fa-minus-square-o fa open-room-types toggle-room-type" data-data-id="0-4610"></i>
+                            </div>
+                            <div class="pull-left room-block-name-right"><!-- conflict line -->
+                                <div class="h6"><!-- conflict line -->
+                                    <h6 class="bold h6">{{roomName}}</h6><!-- conflict line -->
+                                </div><!-- conflict line -->
+                                <span><span class="">92</span> Rooms</span><!-- conflict line -->
+                            </div><!-- conflict line -->
+                        </div>
+                        <div class="room-collapsible room-0-4610">
+                            <span class="actions display-option-saleable" data-row="saleable">
+                                <p class="">Available For Sale  <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="Number that can be sold. If &quot;Allow Overbookings&quot; is enabled, this amount can be set higher than your actual remaining inventory." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                            <span class="actions display-option-available" data-row="available">
+                                <p class="">Remaining Inventory <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="The number of actual rooms or beds that remain for this date. Selling more than this will create an overbooking." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                            <span class="actions display-option-rate" data-row="rate">
+                                <p class="">Rate <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="The price set for a customer to book accommodation." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                            <span class="actions display-option-MinLOS" data-row="MinLOS">
+                                <p class="">Min LOS <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="The minimum length of stay required." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                            <span class="actions display-option-MaxLOS" data-row="MaxLOS">
+                                <p class="">Max LOS <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="The max length of stay required." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                            <span class="actions display-option-closed" data-row="closed">
+                                <p class="">Accommodation Blocked <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="Whether or not you have completely closed the room to bookings." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                            <span class="actions display-option-ClosedArrival" data-row="ClosedArrival">
+                                <p class="">Closed to Arrival <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="Whether to stop reservations from beginning on this date." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                            <span class="actions display-option-ClosedDeparture" data-row="ClosedDeparture">
+                                <p class="">Closed to Departure <!-- ngIf: ::irT == 0 --><i class="fa fa-question-circle no_show_with_click" tooltip="Whether to stop reservations from ending on this date." data-original-title="" title="" style="cursor: help;"></i><!-- end ngIf: ::irT == 0 --></p>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            {{/each}}
+        </script>
+        <script id="day-column" type="text/x-handlebars-template">
+            {{#for 0 daysNumber 1}}
+                <td  class="day-column" data-date="2016-07-20">
+                    <div class="day-header">
+                        <div class="month"></div>
+                        <div class="weekday">WED</div>
+                        <div class="day_of_month">20</div>
+                    </div>
+                    <div class="day-cells">
+                        {{#for 0 ../roomNumber 1}}
+                            <div  class="text-center availability-cell room-collapsible room-0-4610">
+                                <div class="cell data-loaded height-by-display-options">
+                                    <div class="room-block-name clearfix"></div>
+                                    <div class="cell-row display-option-saleable saleable edit-mode-available" data-row="saleable">
+                                        <div class="editable-outside">
+                                            <div class="editable-inside modified-marker">
+                                                <a href="" data-click-param="available" class="a-avail editable">
+                                                    <span class="saved"><span class="value-marker">83</span></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cell-row display-option-available" data-row="available">
+                                        <div class="total physical-availability">83</div>
+                                    </div>
+
+                                    <div class="cell-row display-option-rate edit-mode-rate" data-row="rate">
+                                        <div class="editable-outside">
+                                            <div class="editable-inside modified-marker">
+                                                <a href="" data-click-param="rate" class="a-rate editable">
+                                                    <span class="saved"><span class="value-marker">£  22.00</span></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cell-row display-option-MinLOS edit-mode-MinLOS" data-row="MinLOS">
+                                        <div class="editable-outside">
+                                            <div class="editable-inside modified-marker">
+                                                <a href="" data-click-param="MinLOS" class="a-value editable">
+                                                    <span class="saved"><span class="value-marker">0</span></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cell-row display-option-MaxLOS edit-mode-MaxLOS" data-row="MaxLOS">
+                                        <div class="editable-outside">
+                                            <div class="editable-inside modified-marker">
+                                                <a href="" data-click-param="MaxLOS" class="a-value editable">
+                                                    <span class="saved"><span class="value-marker">14</span></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cell-row display-option-closed edit-mode-closed" data-row="closed">
+                                        <input class="" type="checkbox" autocomplete="off">
+                                    </div>
+
+                                    <div class="cell-row display-option-ClosedArrival edit-mode-ClosedArrival" data-row="ClosedArrival">
+                                        <input class="" type="checkbox" autocomplete="off">
+                                    </div>
+
+                                    <div class="cell-row display-option-ClosedDeparture edit-mode-ClosedDeparture" data-row="ClosedDeparture">
+                                        <input class="" type="checkbox" autocomplete="off">
+                                    </div>
+
+                                    <input type="text" class="custom_rooms number edit-field" style="display: none">
+                                </div>
+                                <div class="cell for-inload height-by-display-options">
+                                    <div class="room-block-name clearfix"></div>
+                                    <div class="loading"></div>
+                                </div>
+                            </div>
+                        {{/for}}
+                    </div>
+                </td>
+            {{/for}}
+        </script>
+        <script>
+            Handlebars.registerHelper({
+            'for': function(from, to, incr, block) {
+                var accum = '';
+                from = +from;
+                to = +to;
+                incr = +incr;
+
+                for(var i = from; i < to; i += incr)
+                    accum += block.fn(i);
+                return accum;
+                }
+            });
+
+             function getHandlebarsTplsAndRegister($el){
+                if (!Handlebars) return false;
+
+                $el = $el || $('[type="text/x-handlebars-template"]');
+                var tpls = {};
+
+                $el.each(function(i, val){
+                    var $_tpl = $(val),
+                        id = $_tpl.attr('id');
+
+                    if (id) {
+                        var name = id.replace(/-/g, '_');
+                        if (!tpls[name]) {
+                            tpls[name] = $_tpl[0].innerHTML;
+                            Handlebars.registerPartial(name, tpls[name]);
+                        }
+                    }
+                });
+
+                return tpls;
+            }
+            
+            $(function(){
+                console.time('A');
+                var i;
+                var hTpls = getHandlebarsTplsAndRegister($('#room-head, #day-column'));
+                var tpls = {};
+                tpls.roomHead = Handlebars.compile(hTpls.room_head);
+                tpls.dayColumn = Handlebars.compile(hTpls.day_column);
+                var roomTypes = [],
+                    roomNumber = 30,
+                    daysNumber = 180;
+                    
+                for (i=0;i<roomNumber;i++)
+                    roomTypes.push({'roomName':'room '+i});
+                $('#roomHeadContainer')[0].innerHTML = tpls.roomHead({roomTypes:roomTypes});
+                $('#dayColumnsContainer')[0].innerHTML = tpls.dayColumn({roomNumber: roomNumber, daysNumber: daysNumber});
+                console.timeEnd('A');
+            })
+        </script>
+        <div class="intervals-tables">
+            <table class="availability_interval">
+                <tbody>
+                    <tr>
+                        <td style="width:240px">
+                            <div class="column-caption" style="overflow: hidden!important;"><!-- conflict line -->
+                                <div class="pull-left" style="margin-right: 10px;">
+                                    <i class="fa open-room-types fa-minus-square-o"></i>
+                                </div>
+                                <div class="pull-left" style="min-width: calc(100% - 30px);"><!-- conflict line -->
+                                    Room types
+                                </div>
+                            </div>
+                            <table class="av_rooms">
+                                <tbody id="roomHeadContainer">
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>
+                            <div class="scroll-wrapper bet-scrolled av_interval_scrolled_layout" style="position: relative; width: 923px;">
+                                <div class="bet-scrolled av_interval_scrolled_layout scroll-content scroll-scrollx_visible"  style="margin-bottom: 0px; margin-right: 0px;">
+                                    <table class="table av_interval skip_change_listener">
+                                        <tbody>
+                                            <tr id="dayColumnsContainer">
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

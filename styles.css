@@ -1,0 +1,100 @@
+/*RESET STYLES*/
+#av-matrix *, #av-matrix  {
+    box-sizing: border-box;
+}
+
+/*COMMON STYLES*/
+#av-matrix table{
+    font-family: Open Sans;
+    font-size: 12px;   
+    vertical-align: middle;
+    color: rgb(51,51,51);
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse; 
+    border-spacing: 0;
+    border-bottom: 2px solid #ddd;
+}
+#av-matrix a{
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
+    color: #333;
+}
+
+/*THEAD*/
+#av-matrix > table:first-child{
+    background: #f6f6f6;
+    font-weight: 700;
+}
+
+/*TBODY*/
+#av-matrix > table:first-child td{
+    height: 61px;    
+    text-transform: uppercase;
+}
+#av-matrix table tr td{
+    height: 24px;
+    position: relative;
+    min-width: 57px;
+    width: 1px;
+    table-layout: fixed;
+    padding: 2px;
+}
+#av-matrix table tr{
+    border-bottom: 1px solid #e5e5e5;
+}
+#av-matrix table tr:last-child{
+    border-bottom: none; 
+}
+#av-matrix > table:nth-child(odd) {
+    background: #f8f8f8;
+} 
+#av-matrix .weekend{
+    background: #e6f4f9;
+    background-clip: padding-box;
+}
+#av-matrix > table:nth-child(odd) .weekend{
+    background: #e1eff4 ;
+    background-clip: padding-box;
+}
+#av-matrix .modified{
+    background: linear-gradient(#6dd0f5, #6dd0f5) center center / 60% 90% no-repeat;
+}
+
+/*CHECKBOXES*/
+#av-matrix input[type=checkbox]{
+    display: none; 
+}
+#av-matrix input[type=checkbox] + label:before, #av-matrix input[type=checkbox] + label:after { 
+    display: block;    
+    z-index: 1000;
+    content: "";
+    cursor: pointer;
+    transition: 0.3s ease 0.2s;
+    position: absolute;
+}
+#av-matrix input[type=checkbox] + label:before     {
+    border: 2px solid #666666;
+    height: 12px;
+    width: 12px;
+    top: 4px;
+    left: calc(50% - 8px);
+}
+#av-matrix input[type=checkbox] + label:after {
+    top: 2px;
+    width: 5px;
+    height: 12px;
+    border-bottom: 3px solid #0072bc;
+    border-right: 3px solid #0072bc; 
+    opacity: 0; 
+    transform: rotate(180deg);
+    left: calc(50% - 4px);
+}
+#av-matrix input[type=checkbox]:checked + label:before { 
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+}
+#av-matrix input[type=checkbox]:checked + label:after {
+    opacity: 1; 
+    transform: scale(1) rotate(45deg);
+}
