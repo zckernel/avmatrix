@@ -62,7 +62,7 @@
 }
 
 /*CHECKBOXES*/
-/*#av-matrix input[type=checkbox]{
+#av-matrix input[type=checkbox]{
     display: none; 
 }
 #av-matrix input[type=checkbox] + label:before, #av-matrix input[type=checkbox] + label:after { 
@@ -97,4 +97,4 @@
 #av-matrix input[type=checkbox]:checked + label:after {
     opacity: 1; 
     transform: scale(1) rotate(45deg);
-}*/
+}
