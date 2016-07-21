@@ -3,15 +3,15 @@
         <title>Tables</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>-->
         <link rel="stylesheet" href="styles.css">
         
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>-->
         <script type="text/javascript" src="http://acessa.loc/connect/plugins/handlebars-v4.0.4.js"></script>
     </head>
     <body>
         <script id="days-line" type="text/x-handlebars-template">
-            {{#for 0 weeksNumber 1}}
+            
                 <td>thu<br>07</td>
                 <td class="weekend">fri<br>08</td>
                 <td class="weekend">sat<br>09</td>
@@ -19,14 +19,14 @@
                 <td>mon<br>11</td>
                 <td>tue<br>12</td>
                 <td>wed<br>13</td>
-            {{/for}}
+            
         </script>
         
         <script id="rooms-data" type="text/x-handlebars-template">
-            {{#each roomTypes}}
+            
                 <table>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
+                        {{#for 0 weeksNumber 1}}
                             <td class="modified"><a href="#">1</a></td>
                             <td class="weekend"><a href="#">1</a></td>
                             <td class="weekend"><a href="#">1</a></td>
@@ -37,7 +37,7 @@
                         {{/for}}
                     </tr>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
+                        {{#for 0 weeksNumber 1}}
                             <td>1</td>
                             <td class="weekend">1</td>
                             <td class="weekend">1</td>
@@ -48,7 +48,7 @@
                         {{/for}}
                     </tr>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
+                        {{#for 0 weeksNumber 1}}
                             <td><a href="#">0,00 &#8372;</a></td>
                             <td class="weekend"><a href="#">0,00 &#8372;</a></td>
                             <td class="weekend"><a href="#">0,00 &#8372;</a></td>
@@ -59,7 +59,7 @@
                         {{/for}}
                     </tr>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
+                        {{#for 0 weeksNumber 1}}
                             <td><a href="#">0</a></td>
                             <td class="weekend"><a href="#">0</a></td>
                             <td class="weekend"><a href="#">0</a></td>
@@ -70,7 +70,7 @@
                         {{/for}}
                     </tr>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
+                        {{#for 0 weeksNumber 1}}
                             <td><a href="#">0</a></td>
                             <td class="weekend"><a href="#">0</a></td>
                             <td class="weekend"><a href="#">0</a></td>
@@ -81,40 +81,40 @@
                         {{/for}}
                     </tr>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c1"><label for="ch-{{../roomId}}-{{this}}-c1"></label></td>
-                            <td class="weekend"><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c2"><label for="ch-{{../roomId}}-{{this}}-c2"></label></td>
-                            <td class="weekend"><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c3"><label for="ch-{{../roomId}}-{{this}}-c3"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c4"><label for="ch-{{../roomId}}-{{this}}-c4"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c5"><label for="ch-{{../roomId}}-{{this}}-c5"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c6"><label for="ch-{{../roomId}}-{{this}}-c6"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c7"><label for="ch-{{../roomId}}-{{this}}-c7"></label></td>
+                        {{#for 0 weeksNumber 1}}
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c1"><label for="ch-{{roomId}}-{{this}}-c1"></label></td>
+                            <td class="weekend"><input type="checkbox" id="ch-{{roomId}}-{{this}}-c2"><label for="ch-{{roomId}}-{{this}}-c2"></label></td>
+                            <td class="weekend"><input type="checkbox" id="ch-{{roomId}}-{{this}}-c3"><label for="ch-{{roomId}}-{{this}}-c3"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c4"><label for="ch-{{roomId}}-{{this}}-c4"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c5"><label for="ch-{{roomId}}-{{this}}-c5"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c6"><label for="ch-{{roomId}}-{{this}}-c6"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c7"><label for="ch-{{roomId}}-{{this}}-c7"></label></td>
                         {{/for}}
                     </tr>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c8"><label for="ch-{{../roomId}}-{{this}}-c8"></label></td>
-                            <td class="weekend"><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c9"><label for="ch-{{../roomId}}-{{this}}-c9"></label></td>
-                            <td class="weekend"><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c10"><label for="ch-{{../roomId}}-{{this}}-c10"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c11"><label for="ch-{{../roomId}}-{{this}}-c11"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c12"><label for="ch-{{../roomId}}-{{this}}-c12"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c13"><label for="ch-{{../roomId}}-{{this}}-c13"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c14"><label for="ch-{{../roomId}}-{{this}}-c14"></label></td>
+                        {{#for 0 weeksNumber 1}}
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c8"><label for="ch-{{roomId}}-{{this}}-c8"></label></td>
+                            <td class="weekend"><input type="checkbox" id="ch-{{roomId}}-{{this}}-c9"><label for="ch-{{roomId}}-{{this}}-c9"></label></td>
+                            <td class="weekend"><input type="checkbox" id="ch-{{roomId}}-{{this}}-c10"><label for="ch-{{roomId}}-{{this}}-c10"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c11"><label for="ch-{{roomId}}-{{this}}-c11"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c12"><label for="ch-{{roomId}}-{{this}}-c12"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c13"><label for="ch-{{roomId}}-{{this}}-c13"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c14"><label for="ch-{{roomId}}-{{this}}-c14"></label></td>
                         {{/for}}
                     </tr>
                     <tr>
-                        {{#for 0 ../weeksNumber 1}}
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c15"><label for="ch-{{../roomId}}-{{this}}-c15"></label></td>
-                            <td class="weekend"><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c16"><label for="ch-{{../roomId}}-{{this}}-c16"></label></td>
-                            <td class="weekend"><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c17"><label for="ch-{{../roomId}}-{{this}}-c17"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c18"><label for="ch-{{../roomId}}-{{this}}-c18"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c19"><label for="ch-{{../roomId}}-{{this}}-c19"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c20"><label for="ch-{{../roomId}}-{{this}}-c20"></label></td>
-                            <td><input type="checkbox" id="ch-{{../roomId}}-{{this}}-c21"><label for="ch-{{../roomId}}-{{this}}-c21"></label></td>
+                        {{#for 0 weeksNumber 1}}
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c15"><label for="ch-{{roomId}}-{{this}}-c15"></label></td>
+                            <td class="weekend"><input type="checkbox" id="ch-{{roomId}}-{{this}}-c16"><label for="ch-{{roomId}}-{{this}}-c16"></label></td>
+                            <td class="weekend"><input type="checkbox" id="ch-{{roomId}}-{{this}}-c17"><label for="ch-{{roomId}}-{{this}}-c17"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c18"><label for="ch-{{roomId}}-{{this}}-c18"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c19"><label for="ch-{{roomId}}-{{this}}-c19"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c20"><label for="ch-{{roomId}}-{{this}}-c20"></label></td>
+                            <td><input type="checkbox" id="ch-{{roomId}}-{{this}}-c21"><label for="ch-{{roomId}}-{{this}}-c21"></label></td>
                         {{/for}}
                     </tr>
                 </table>
-            {{/each}}
+            
         </script>
         <script>
             Handlebars.registerHelper({
@@ -130,38 +130,38 @@
                 }
             });
 
-             function getHandlebarsTplsAndRegister($el){
+             function getHandlebarsTplsAndRegister($els){
                 if (!Handlebars) return false;
 
-                $el = $el || $('[type="text/x-handlebars-template"]');
-                var tpls = {};
+                $els = $els.split(',');
+                var tpls = {},i;
 
-                $el.each(function(i, val){
-                    var $_tpl = $(val),
-                        id = $_tpl.attr('id');
+                for(i in $els) {
+                    var $_tpl = document.getElementById($els[i]);
+                        id = $els[i];
 
                     if (id) {
                         var name = id.replace(/-/g, '_');
                         if (!tpls[name]) {
-                            tpls[name] = $_tpl[0].innerHTML;
+                            tpls[name] = $_tpl.innerHTML;
                             Handlebars.registerPartial(name, tpls[name]);
                         }
                     }
-                });
+                };
 
                 return tpls;
             }
             
-             $( window ).load(function(){
-             //$(function(){
+            //$(function(){
+            window.onload = function(){
                 console.time('Prepare HTML');
                 var i;
-                var hTpls = getHandlebarsTplsAndRegister($('#days-line, #rooms-data'));
+                var hTpls = getHandlebarsTplsAndRegister('days-line,rooms-data');
                 var tpls = {};
                 tpls.daysLine = Handlebars.compile(hTpls.days_line);
                 tpls.roomsData = Handlebars.compile(hTpls.rooms_data);
                 var roomTypes = [],
-                    roomNumber = 30,
+                    roomNumber = 120,
                     weeksNumber = 60;
                     
                 for (i=0;i<roomNumber;i++)
@@ -169,11 +169,20 @@
                 
                 console.timeEnd('Prepare HTML');
                 console.time('Inserting HTML');
-                $('#days-line-container')[0].innerHTML = tpls.daysLine({weeksNumber: weeksNumber});
-                $('#data-container')[0].innerHTML = tpls.roomsData({roomTypes: roomTypes, weeksNumber: weeksNumber});
+                var daysHTML = '',
+                    dataHTML = '';
+                
+                for(i=0;i<weeksNumber;i++)
+                    daysHTML += tpls.daysLine()
+                
+                for(i in roomTypes)
+                    dataHTML += tpls.roomsData({weeksNumber: weeksNumber, roomId: i});
+                
+                document.getElementById('days-line-container').innerHTML = daysHTML;
+                document.getElementById('data-container').innerHTML = dataHTML;
                 console.timeEnd('Inserting HTML');
                 
-            })
+            }
         </script>
         <div id="av-matrix">
             <table>

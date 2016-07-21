@@ -1,0 +1,137 @@
+<html lang="en">
+    <head>
+        <title>Tables</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="styles.css">
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="http://acessa.loc/connect/plugins/handlebars-v4.0.4.js"></script>
+    </head>
+    <body>
+        <script id="tpl-day" type="text/x-handlebars-template">
+            <td class="{{class}}">thu<br>{{day}}</td>
+        </script>
+        
+        <script id="tpl-tr1" type="text/x-handlebars-template">
+            <td class="{{class}}"><a href="#">1</a></td>
+        </script>
+        <script id="tpl-tr2" type="text/x-handlebars-template">
+            <td class="{{class}}">1</td>
+        </script>
+        <script id="tpl-tr3" type="text/x-handlebars-template">
+            <td class="{{class}}"><a href="#">0,00 &#8372;</a></td>
+        </script>
+        <script id="tpl-tr4" type="text/x-handlebars-template">
+            <td class="{{class}}"><a href="#">0</a></td>
+        </script>
+        <script id="tpl-tr5" type="text/x-handlebars-template">
+            <td class="{{class}}"><a href="#">0</a></td>
+        </script>
+        <script id="tpl-tr6" type="text/x-handlebars-template">
+            <td class="{{class}}"><input type="checkbox" id="ch-{{roomId}}-{{nn}}"><label for="ch-{{roomId}}-{{nn}}"></label></td>
+        </script>
+        <script id="tpl-tr7" type="text/x-handlebars-template">
+            <td class="{{class}}"><input type="checkbox" id="ch-{{roomId}}-{{nn}}"><label for="ch-{{roomId}}-{{nn}}"></label></td>
+        </script>
+        <script id="tpl-tr8" type="text/x-handlebars-template">
+            <td class="{{class}}"><input  type="checkbox" id="ch-{{roomId}}-{{nn}}"><label for="ch-{{roomId}}-{{nn}}"></label></td>
+        </script>
+
+        <script>
+            Handlebars.registerHelper({
+            'for': function(from, to, incr, block) {
+                var accum = '';
+                from = +from;
+                to = +to;
+                incr = +incr;
+
+                for(var i = from; i < to; i += incr)
+                    accum += block.fn(i);
+                return accum;
+                }
+            });
+
+             function getHandlebarsTplsAndRegister($el){
+                if (!Handlebars) return false;
+
+                $el = $el || $('[type="text/x-handlebars-template"]');
+                var tpls = {};
+
+                $el.each(function(i, val){
+                    var $_tpl = $(val),
+                        id = $_tpl.attr('id');
+
+                    if (id) {
+                        var name = id.replace(/-/g, '_');
+                        if (!tpls[name]) {
+                            tpls[name] = $_tpl[0].innerHTML;
+                            Handlebars.registerPartial(name, tpls[name]);
+                        }
+                    }
+                });
+
+                return tpls;
+            }
+            
+            //$(function(){
+            $( window ).load(function(){
+                console.time('Prepare HTML');
+                var i,ii,iii,t=1;
+                var hTpls = getHandlebarsTplsAndRegister($('#tpl-day, #tpl-tr1, #tpl-tr2, #tpl-tr3, #tpl-tr4, #tpl-tr5, #tpl-tr6, #tpl-tr7, #tpl-tr8'));
+                var tpls = {};
+                tpls.day = Handlebars.compile(hTpls.tpl_day);
+                for(i=1;i<9;i++) {
+                    tpls['tpl_tr'+i] = Handlebars.compile(hTpls['tpl_tr'+i]);
+                }
+                
+                var roomTypes = [],
+                    days = [],
+                    roomNumber = 120,
+                    daysNumber = 365;
+                    
+                for (i=0;i<roomNumber;i++)
+                    roomTypes.push({roomName:'room '+i, roomId:i});
+                
+                console.timeEnd('Prepare HTML');
+                console.time('Inserting HTML');
+                var daysHTML = '',
+                    dataHTML = '';
+                
+                for(i=0;i<daysNumber;i++) {
+                    daysHTML += tpls.day({day:i, class:(t%6 == 0 || t%7 == 0) ? 'weekend' : ''});
+                    ++t; if(t==8) t=1;
+                }
+                daysHTML = '<tr>' + daysHTML + '</tr>';
+                
+                for(i in roomTypes) {
+                    dataHTML += '<table>';
+                    for(ii=1;ii<9;ii++) {
+                        t=1;
+                        dataHTML += '<tr>';
+                        for(iii=0;iii<daysNumber;iii++) {
+                            dataHTML += tpls['tpl_tr'+ii]({roomId: i, nn: iii, class:(t%6 == 0 || t%7 == 0) ? 'weekend' : ''});
+                            ++t; if(t==8) t=1;
+                        }
+                        dataHTML += '</tr>';
+                    }
+                    dataHTML += '</table>';
+                }
+                
+                $('#days-line-container')[0].innerHTML = daysHTML;
+                $('#data-container')[0].innerHTML = dataHTML;
+                console.timeEnd('Inserting HTML');
+                
+            })
+        </script>
+        <div id="av-matrix">
+            <table>
+                <tr id="days-line-container">
+                    
+                </tr>
+            </table>
+            <div id="data-container"></div>
+        </div>
+    </body>
+</html>
