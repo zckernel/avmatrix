@@ -31,15 +31,24 @@ body{
     background: #f6f6f6 linear-gradient(90deg, rgb(230, 244, 249), rgb(230, 244, 249) 120px, transparent 1px, transparent) 540px 0px / 722px 1px;
 }
 .date{
-    width: 60px;
+    width: 80px;
     word-spacing: 100px; 
     white-space: normal;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     border-bottom: 2px solid #ddd;
     z-index: 20;
     position: relative;
     flex-shrink: 0;
+}
+
+.date div {
+    top: 2px;
+    word-spacing: 0px;
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    color:#aeaeae;
 }
 .room-type-hdr{
     height: 61px;
