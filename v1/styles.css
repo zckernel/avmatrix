@@ -1,28 +1,29 @@
-body{
+.matrix-container * {
+    box-sizing: border-box;
     font-size: 12px;
     font-family: Open Sans;
 }
-.header{
+.matrix-container .header{
     display: flex;
     position: fixed;  
     z-index: 20;
 }
-.wrapper{
+.matrix-container .wrapper{
     display: flex;   
     color: #333;
     padding-top: 59px;
 }
-.page-wrap{
+.matrix-container .page-wrap{
     display: flex;
 }
-.grey{
+.matrix-container .grey{
     background: rgb(248,248,248);
 }
-.page-wrap{
+.matrix-container .page-wrap{
     white-space: nowrap;
     display: flex;
 }
-.month-page{
+.matrix-container .month-page{
     overflow-x: hidden;
     display: flex;
     height: 61px;
@@ -30,7 +31,7 @@ body{
     text-transform: uppercase;
     background: #f6f6f6 linear-gradient(90deg, rgb(230, 244, 249), rgb(230, 244, 249) 120px, transparent 1px, transparent) 540px 0px / 722px 1px;
 }
-.date{
+.matrix-container .date{
     width: 80px;
     word-spacing: 100px; 
     white-space: normal;
@@ -42,7 +43,7 @@ body{
     flex-shrink: 0;
 }
 
-.date div {
+.matrix-container .date div {
     top: 2px;
     word-spacing: 0px;
     position: absolute;
@@ -50,7 +51,7 @@ body{
     text-align: center;
     color:#aeaeae;
 }
-.room-type-hdr{
+.matrix-container .room-type-hdr{
     height: 61px;
     background: #f6f6f6;
     border-bottom: 2px solid #ddd;
@@ -61,49 +62,49 @@ body{
     flex-shrink: 0;
     width: 241px;
 }
-.aside{
+.matrix-container .aside{
     width: 241px;
 }
-.room-type{
+.matrix-container .room-type{
     border-bottom: 2px solid #ddd;
 }
-.room-type-collapse{
+.matrix-container .room-type-collapse{
     height: 59px;
     border-top: none;
     padding: 13px 0px 8px 0px;
     line-height: normal;
     display: flex;
 }
-.room-type big{
+.matrix-container .room-type big{
     display: block;
     text-transform: uppercase;
     font-size: 13px;
 }
-.room-type small{
+.matrix-container .room-type small{
     color: #848484;
 }
-.condition{
+.matrix-container .condition{
     height: 24px;
     line-height: 25px;
     border-top: 1px solid #ddd;
     padding: 0px 10px;
 }
-.wrap{
+.matrix-container .wrap{
     margin-top: -2px;
     overflow-y: hidden;
     overflow-x: scroll;
     width: calc(100% - 234px);      
 }
-.page{
+.matrix-container .page{
     background: linear-gradient(90deg, rgb(230, 244, 249), rgb(230, 244, 249) 120px, transparent 1px, transparent) 540px 0px / 722px 1px;
 }
-.line{
+.matrix-container .line{
     display: flex;
     border-top: 1px solid #ddd;
     height: 24px;
     white-space: nowrap;
 }
-.cell{
+.matrix-container .cell{
     width: 40px;
     margin: 0px 10px;
     text-align: center;
@@ -113,26 +114,26 @@ body{
     position: relative;
     z-index: 3;
 }
-.undernone .cell{
+.matrix-container .undernone .cell{
     text-decoration: none;
     cursor: text;
 }
-.empty{
+.matrix-container .empty{
     height: 61px;
     border-top: 2px solid #ddd;
 }
-.available-sale, .change, .check-off, .check-on, .blocked.check-on:after{
+.matrix-container .available-sale, .matrix-container .change, .matrix-container .check-off, .matrix-container .check-on, .matrix-container .blocked.check-on:after{
     width: 38px;
     height: 20px;
     margin: 2px 11px 1px 11px;
 }
-.available-sale{
+.matrix-container .available-sale{
     background: #eb1c24;
 }
-.change{
+.matrix-container .change{
     background: #6dd0f5;
 }
-.collapse{
+.matrix-container .collapse{
     cursor: pointer;
     display: inline-block;
     width: 13px;
@@ -141,20 +142,20 @@ body{
     border-radius: 3px;
     background: linear-gradient(#333, #333) 1px 5px / 9px 1px no-repeat;
 }
-.room-type-hdr .collapse{
+.matrix-container .room-type-hdr .collapse{
     margin: 0px 10px 5px 6px;
 }
-.room-type-collapse .collapse{
+.matrix-container .room-type-collapse .collapse{
     margin: 4px 10px 0px 6px;
 }
-.open{
+.matrix-container .open{
     background: linear-gradient(#333, #333) 1px 5px / 9px 1px no-repeat, linear-gradient(#333, #333) 5px 1px / 1px 9px no-repeat;
 }
-.blocked{
+.matrix-container .blocked{
     position: relative;
     z-index: 0;
 }
-.blocked:before{
+.matrix-container .blocked:before{
     background: rgba(235,235,235,.7);
     content: "";
     display: block;
@@ -166,13 +167,13 @@ body{
     left: -10px;
     cursor: default;
 }
-.check-off, .check-on {
+.matrix-container .check-off, .matrix-container .check-on {
     background: linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat, linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat;
 }
-.check-on, .blocked.check-on:after{
+.matrix-container .check-on, .matrix-container .blocked.check-on:after{
     background: radial-gradient(circle, #666 0px, #666 3px, transparent 3px, transparent) center center, linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat, linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat;
 }
-.blocked.check-on:after{
+.matrix-container .blocked.check-on:after{
     content: "";
     position: absolute;
     top: -2px;
@@ -180,7 +181,7 @@ body{
     z-index: 222;
     background: radial-gradient(circle, #666 0px, #666 3px, transparent 3px, transparent) center center, linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat, linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat;
 }
-.check-on.change {
+.matrix-container .check-on.change {
     background:   
         radial-gradient(circle, #666 0px, #666 3px, transparent 3px, transparent) center center, linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat,
         linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat,
@@ -189,7 +190,7 @@ body{
         linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat,
         linear-gradient(#6dd0f5, #6dd0f5) 0px 0px / 38px 19px no-repeat;
 }
-.check-off.change{
+.matrix-container .check-off.change{
     background:       
         linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat,
         linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat,
@@ -197,6 +198,6 @@ body{
         linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat,
         linear-gradient(#6dd0f5, #6dd0f5) 0px 0px / 38px 19px no-repeat;
 }
-.none{
+.matrix-container .none{
     display: none;
 }
