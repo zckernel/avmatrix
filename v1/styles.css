@@ -1,0 +1,203 @@
+.matrix-container * {
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: Open Sans;
+}
+.matrix-container .header{
+    display: flex;
+    position: fixed;  
+    z-index: 20;
+}
+.matrix-container .wrapper{
+    display: flex;   
+    color: #333;
+    padding-top: 59px;
+}
+.matrix-container .page-wrap{
+    display: flex;
+}
+.matrix-container .grey{
+    background: rgb(248,248,248);
+}
+.matrix-container .page-wrap{
+    white-space: nowrap;
+    display: flex;
+}
+.matrix-container .month-page{
+    overflow-x: hidden;
+    display: flex;
+    height: 61px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #f6f6f6 linear-gradient(90deg, rgb(230, 244, 249), rgb(230, 244, 249) 120px, transparent 1px, transparent) 540px 0px / 722px 1px;
+}
+.matrix-container .date{
+    width: 80px;
+    word-spacing: 100px; 
+    white-space: normal;
+    text-align: center;
+    padding-top: 20px;
+    border-bottom: 2px solid #ddd;
+    z-index: 20;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.matrix-container .date div {
+    top: 2px;
+    word-spacing: 0px;
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    color:#aeaeae;
+}
+.matrix-container .room-type-hdr{
+    height: 61px;
+    background: #f6f6f6;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-items: center;
+    flex-shrink: 0;
+    width: 241px;
+}
+.matrix-container .aside{
+    width: 241px;
+}
+.matrix-container .room-type{
+    border-bottom: 2px solid #ddd;
+}
+.matrix-container .room-type-collapse{
+    height: 59px;
+    border-top: none;
+    padding: 13px 0px 8px 0px;
+    line-height: normal;
+    display: flex;
+}
+.matrix-container .room-type big{
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.matrix-container .room-type small{
+    color: #848484;
+}
+.matrix-container .condition{
+    height: 24px;
+    line-height: 25px;
+    border-top: 1px solid #ddd;
+    padding: 0px 10px;
+}
+.matrix-container .wrap{
+    margin-top: -2px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: calc(100% - 234px);      
+}
+.matrix-container .page{
+    background: linear-gradient(90deg, rgb(230, 244, 249), rgb(230, 244, 249) 120px, transparent 1px, transparent) 540px 0px / 722px 1px;
+}
+.matrix-container .line{
+    display: flex;
+    border-top: 1px solid #ddd;
+    height: 24px;
+    white-space: nowrap;
+}
+.matrix-container .cell{
+    width: 40px;
+    margin: 0px 10px;
+    text-align: center;
+    padding-top: 3px;    
+    cursor: pointer;
+    text-decoration: underline;
+    position: relative;
+    z-index: 3;
+}
+.matrix-container .undernone .cell{
+    text-decoration: none;
+    cursor: text;
+}
+.matrix-container .empty{
+    height: 61px;
+    border-top: 2px solid #ddd;
+}
+.matrix-container .available-sale, .matrix-container .change, .matrix-container .check-off, .matrix-container .check-on, .matrix-container .blocked.check-on:after{
+    width: 38px;
+    height: 20px;
+    margin: 2px 11px 1px 11px;
+}
+.matrix-container .available-sale{
+    background: #eb1c24;
+}
+.matrix-container .change{
+    background: #6dd0f5;
+}
+.matrix-container .collapse{
+    cursor: pointer;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background: linear-gradient(#333, #333) 1px 5px / 9px 1px no-repeat;
+}
+.matrix-container .room-type-hdr .collapse{
+    margin: 0px 10px 5px 6px;
+}
+.matrix-container .room-type-collapse .collapse{
+    margin: 4px 10px 0px 6px;
+}
+.matrix-container .open{
+    background: linear-gradient(#333, #333) 1px 5px / 9px 1px no-repeat, linear-gradient(#333, #333) 5px 1px / 1px 9px no-repeat;
+}
+.matrix-container .blocked{
+    position: relative;
+    z-index: 0;
+}
+.matrix-container .blocked:before{
+    background: rgba(235,235,235,.7);
+    content: "";
+    display: block;
+    width: 60px;
+    height: 251px;
+    position: absolute;
+    z-index: -20;
+    top: -182px;
+    left: -10px;
+    cursor: default;
+}
+.matrix-container .check-off, .matrix-container .check-on {
+    background: linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat, linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat;
+}
+.matrix-container .check-on, .matrix-container .blocked.check-on:after{
+    background: radial-gradient(circle, #666 0px, #666 3px, transparent 3px, transparent) center center, linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat, linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat;
+}
+.matrix-container .blocked.check-on:after{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -11px;
+    z-index: 222;
+    background: radial-gradient(circle, #666 0px, #666 3px, transparent 3px, transparent) center center, linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat, linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat, linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat;
+}
+.matrix-container .check-on.change {
+    background:   
+        radial-gradient(circle, #666 0px, #666 3px, transparent 3px, transparent) center center, linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat,
+        linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat,
+        linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat,
+        linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat,
+        linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat,
+        linear-gradient(#6dd0f5, #6dd0f5) 0px 0px / 38px 19px no-repeat;
+}
+.matrix-container .check-off.change{
+    background:       
+        linear-gradient(#666, #666) 25px 2px / 2px 16px no-repeat,
+        linear-gradient(#666, #666) 11px 16px / 16px 2px no-repeat,
+        linear-gradient(#666, #666) 11px 1px / 16px 2px no-repeat,
+        linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat,
+        linear-gradient(#6dd0f5, #6dd0f5) 0px 0px / 38px 19px no-repeat;
+}
+.matrix-container .none{
+    display: none;
+}

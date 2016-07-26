@@ -1,4 +1,7 @@
 /*RESET STYLES*/
+
+.inv { display:none}
+
 #av-matrix *, #av-matrix  {
     box-sizing: border-box;
 }
@@ -62,6 +65,7 @@
 }
 
 /*CHECKBOXES*/
+/*
 #av-matrix input[type=checkbox]{
     display: none; 
 }
@@ -97,4 +101,11 @@
 #av-matrix input[type=checkbox]:checked + label:after {
     opacity: 1; 
     transform: scale(1) rotate(45deg);
+}*/
+
+.left {
+    float:left;
+}
+.clear {
+    clear:both;
 }
