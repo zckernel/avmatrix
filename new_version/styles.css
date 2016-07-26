@@ -188,6 +188,13 @@ body{
         linear-gradient(#666, #666) 11px 1px / 2px 16px no-repeat,
         linear-gradient(#6dd0f5, #6dd0f5) 0px 0px / 38px 19px no-repeat;
 }
-.none{
+.none {
     display: none;
+}
+/* Kir styles */
+.cursor-move{
+    cursor: move !important;
+}
+#wrap {
+    overflow:hidden;
 }
